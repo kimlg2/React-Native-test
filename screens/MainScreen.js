@@ -1,12 +1,14 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { Platform } from 'react-native';
+import InputForm from '../components/InputForm';
+
+
 
 const MainScreen = () => {
   return (
    <SafeAreaView style={styles.container}>
-    <StatusBar barStyle={'defailt'} />
+    <StatusBar barStyle={'default'} />
       <Text style={styles.pageTitle}>app 소개</Text>
       <View style={styles.listView}>
         <Text style={styles.listTitle}>할 일</Text>
@@ -15,6 +17,7 @@ const MainScreen = () => {
       <View style={styles.listView}>
         <Text style={styles.listTitle}>완료 된 일</Text>
       </View>
+      <InputForm />
     </SafeAreaView>
   )
 }
