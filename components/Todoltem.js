@@ -2,8 +2,8 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CheckboxUnchecked from '../assets/checkbox-unchecked.svg';
 import CheckboxChecked from '../assets/checkbox-checked.svg';
+// import DeleteIcon from '../assets/delete.svg';
 import DeleteIcon from '../assets/delete.svg';
-
 const Todoltem = () => {
   return (
     <View style={styles.itemContainer}>
