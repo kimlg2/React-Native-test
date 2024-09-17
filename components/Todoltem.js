@@ -13,6 +13,7 @@ const Todoltem = () => {
       style={
             styles.itemTextChecked
             }>
+           
             <CheckboxUnchecked />
             <CheckboxChecked style={styles.itemCheckboxCheckedIcon}/>
 
@@ -23,7 +24,7 @@ const Todoltem = () => {
       </Text>
       <Pressable
         style={[
-            styles.deleButton, 
+            styles.deleteButton, 
             styles.deleButtonDone
             ]}
            hitSlop={10}
@@ -37,4 +38,46 @@ const Todoltem = () => {
 
 export default Todoltem
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  itemContainer:{
+    flexDirection: 'row',
+    alignContent: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingBottom: 10,
+    backgroundColor: '#f7f8fa',
+  },
+  itemCheckbox: {
+    justifyContent: 'center',
+    adlignItems: 'center',
+    width: 20,
+    height: 20,
+    marginRight: 13,
+    borderRadius: 6
+  },
+  itemCheckboxCheckedIcon: {
+    shadowColor: '#000000',
+    shadowOpacity: 0.14,
+    shadowRadius: 8,
+    shadowOffset: { 
+    width: 0, height: 4 
+  }    
+  }, 
+  itemText: {
+    marginRight: "auto",
+    paddingRight: 25,
+    fontSize: 15,
+    lineHeight: "20",
+    color: '#737373'
+  },
+  itemTextChecked: {
+    opacity: 0.3,
+    textDecorationLine: 'line-through'
+  },
+  deleteButton: {
+    opacity: 0.8,
+  },
+  deleButtonDone: {
+    opacity: 0.3
+  }
+})
