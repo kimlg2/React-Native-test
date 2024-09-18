@@ -4,30 +4,41 @@ import CheckboxUnchecked from '../assets/checkbox-unchecked.svg';
 import CheckboxChecked from '../assets/checkbox-checked.svg';
 // import DeleteIcon from '../assets/delete.svg';
 import DeleteIcon from '../assets/delete.svg';
-const Todoltem = () => {
+import { useDispatch } from 'react-redux';
+import { updateTodo, deleteTodo } from '../redux/slices/todoSlice';
+const Todoltem = (props) => {
+  const dispatch = useDispatch();
   return (
     <View style={styles.itemContainer}>
       
       <Pressable  
       hitSlop={10}  
-      style={
-            styles.itemTextChecked
-            }>
+      style={styles.itemCheckbox}
+      onPress={()=> dispatch(updateTodo(props.id))}
+            >
            
+           {props.state ==='todo' ?
+         
+          
             <CheckboxUnchecked />
+            :
             <CheckboxChecked style={styles.itemCheckboxCheckedIcon}/>
+          }
+           
 
       </Pressable>
-      <Text style={[styles.itemText, styles.itemTextChecked]}>
-
-        코딩하기
+      <Text style={[styles.itemText, 
+        props.state ==='done' ? styles.itemTextChecked : '']}>
+          {props.text}
+       
       </Text>
       <Pressable
         style={[
             styles.deleteButton, 
-            styles.deleButtonDone
+          props.state === 'done' ?  styles.deleButtonDone : ''
             ]}
            hitSlop={10}
+           onPress ={() => dispatch(deleteTodo(props.id))}
             >
               <DeleteIcon />
   
