@@ -1,5 +1,5 @@
 import { Platform,KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import React,{useState} from 'react'
 import { addTodo } from '../redux/slices/todoSlice';
 import { useDispatch } from 'react-redux';
 
