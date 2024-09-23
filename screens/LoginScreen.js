@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 const LoginScreen = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
-    <View>
-      <Text>LoginScreen</Text>
+    <View
+    style={styles.container}
+    >
+      
+     
     </View>
   )
 }
