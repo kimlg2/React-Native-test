@@ -12,6 +12,12 @@ const LoginScreen = () => {
     console.log('User', user);
   } catch (error) {
     console.log(error.message);
+    Alert.alert(
+      "회원가입 도중에 문제가 발생!",
+      error.message,
+      [{text: '닫기', onPress: () => console.log('닫기')}],
+      {cancelable: true}
+    )
   }
 }
   const handleLogin = async () => {
