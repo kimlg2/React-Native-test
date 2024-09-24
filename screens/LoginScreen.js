@@ -1,9 +1,22 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import ListIcon from '../assets/list.svg';
+import { getAuth,createUserWithEmailAndPassword } from 'firebase/auth';
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const auth = getAuth();
+  const handleSignUp = async () => {
+    try {
+    const user = await createUserWithEmailAndPassword(auth,email,password);
+    console.log('User', user);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+  const handleLogin = async () => {
+   
+  }
   return (
     <View
     style={styles.container}
@@ -29,11 +42,13 @@ const LoginScreen = () => {
      <View style ={styles.buttonContainer}>
       <TouchableOpacity
       style={styles.button}
+      onPress={handleLogin}
       >
         <Text style={styles.buttonText}>로그인</Text>     
       </TouchableOpacity>
       <TouchableOpacity
       style={[styles.button, styles.buttonOutline]}
+      onPress={handleSignUp}
       >
         <Text style={styles.buttonOutlineText}>회원가입</Text>     
       </TouchableOpacity>
